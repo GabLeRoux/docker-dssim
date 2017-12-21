@@ -15,8 +15,14 @@ if (!version) {
 const package_json = __dirname + '/../package.json';
 
 const pkg = require(package_json)
-const originalPackage = readFileSync(package_json).toString()
-const updatedPackage = originalPackage.replace(`"version": "${pkg.version}"`, `"version": "${version}"`)
+if (pkg.version !== version) {
+    const originalPackage = readFileSync(package_json).toString()
+    const updatedPackage = originalPackage.replace(`"version": "${pkg.version}"`, `"version": "${version}"`)
+    if (updatedPackage === originalPackage) {
+        console.error('Version not found in ' + package_json)
+        return
+    }
+}
 writeFileSync(package_json, updatedPackage)
 spawnSync('git', ['add', '-A'])
 spawnSync('git', ['commit', '-m', 'version ' + version])
