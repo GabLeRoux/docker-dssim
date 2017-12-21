@@ -1,0 +1,12 @@
+{
+    "name": "docker-dssim",
+    "version": "2.9.4",
+    "description": "Docker image for dssim",
+    "scripts": {
+        "build": "docker build -t awerlang/dssim .",
+        "tag": "node scripts/tag",
+        "run": "docker run -v %DATA_DIR%:/data awerlang/dssim"
+    },
+    "author": "André Werlang <beppe85@gmail.com>",
+    "license": "MIT"
+}
