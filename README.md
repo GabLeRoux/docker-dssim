@@ -1,9 +1,15 @@
-Docker image for dssim https://github.com/pornel/dssim
+# Docker image for [dssim](https://github.com/pornel/dssim)
 
-# Running
+## Running
 
-> docker run --rm -v c:/data:/data awerlang/dssim /data/file-original.png /data/file-modified.png
+```bash
+docker run --rm -v ./data:/data awerlang/dssim /data/file-original.png /data/file-modified.png
+```
 
-# Usage
+## Usage
 
-Refer to https://github.com/pornel/dssim
+Refer to [pornel/dssim](https://github.com/pornel/dssim) usage.
+
+## License
+
+[MIT](LICENSE.md) © [André Werlang](http://blog.werlangtecnologia.com.br/)
